@@ -27,17 +27,17 @@ function Routes() {
       <Route exact={true} path="/">
         <Redirect to={"/dashboard"} />
       </Route>
+      <Route exact={true} path="/reservations">
+        <Redirect to={"/dashboard"} />
+      </Route>
+      <Route exact={true} path="/reservations/new">
+        <Reservations />
+      </Route>
       <Route exact={true} path="/reservations/:reservation_id/seat">
         <Seat />
       </Route>
       <Route exact={true} path="/reservations/:reservation_id/edit">
         <Edit />
-      </Route>
-      <Route exact path="/reservations/new">
-        <Reservations />
-      </Route>
-      <Route exact={true} path="/reservations">
-        <Redirect to={"/dashboard"} />
       </Route>
       <Route path="/dashboard">
         <Dashboard date={date || today()} />
